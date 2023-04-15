@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
-import Bike from './bike';
-import Timeslot from './timeslot';
-import Customer from './customer';
+import Bike from './bike.model.js';
+import Timeslot from './timeslot.model.js';
+import Customer from './customer.model.js';
 
 const bookingSchema = new mongoose.Schema({
   bike: { type: mongoose.Schema.Types.ObjectId, ref: 'Bike', required: true },

@@ -90,8 +90,10 @@ async function seedDatabase() {
     console.log(`Inserted ${insertedAdmins.length} admins`);
 
     // Disconnect from the database
-    mongoose.disconnect();
   } catch (e) {
     console.log(e.message);
+  } finally {
+    mongoose.connection.close();
+    console.log('MongoDB connection closed');
   }
 }
