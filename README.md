@@ -1,9 +1,9 @@
-## Bike Rental System Updated. 
+# Bike Rental System Updated. 
 
-Full Documentation link - https://hackmd.io/@5cEar4SwQUa-4Sy6-1qYyQ/Sy1e78Yzn
-
+Documentation link - https://hackmd.io/AKLlIa7TQsa5ejzXQN7E0g
 ---
 
+#### Database Schema and API endpoints
 
 ### Actors involved
 
@@ -52,9 +52,9 @@ A scheduling mechanism (e.g., timer or scheduler) that automatically updates the
 
 Represents a bike with properties such as bikeId, bikeName, status (e.g. available, booked), and any other relevant details. 
 
-bikeId: a required string field with a unique constraint, representing the unique identifier for the bike
-bikeName: a required string field, representing the name of the bike
-isAvailable: a boolean field with a default value of true, representing whether the bike is currently available
+- **bikeId**: a required string field with a unique constraint, representing the unique identifier for the bike
+- **bikeName**: a required string field, representing the name of the bike
+- **isAvailable**: a boolean field with a default value of true, representing whether the bike is currently available
 
 
 
@@ -87,15 +87,11 @@ const Bike = mongoose.model('Bike', bikeSchema);
 
 Represents a time slot for booking a bike with properties such as timeslotId, startTime, endTime, and status (e.g. available, booked), and any other relevant details.
 
-##### Properties:
+- **startTime**: A required Date property that stores the start time of a timeslot.
+- **endTime**: A required Date property that stores the end time of a timeslot.
+- **isAvailable**: A Boolean property that is set to true by default and indicates whether the timeslot is available for booking.
 
-fullName: A required string property that represents the full name of the customer.
-email: A required string property that represents the email address of the customer. The unique option is set to true to ensure that no two documents have the same email address.
-password: A required string property that represents the password of the customer.
-
-##### Indexes:
-The customerSchema defines an index on the email property with the unique option set to true. This ensures that there are no two documents with the same email address. This index can be used to optimize queries that involve looking up a customer by their email address.
-
+Index on startTime and endTime fields for optimized queries.
 
 ```js
 const timeslotSchema = new mongoose.Schema({
@@ -123,12 +119,10 @@ const Timeslot = mongoose.model('Timeslot', timeslotSchema);
 Represents a customer with properties such as customerId, customerName, contactNumber, and any other relevant details.
 
 
-##### Properties
-fullName: A required string property that represents the full name of the customer.
-email: A required string property that represents the email address of the customer. The unique option is set to true to ensure that no two documents have the same email address.
-password: A required string property that represents the password of the customer.
+- **fullName**: A required string property that represents the full name of the customer.
+- **email**: A required string property that represents the email address of the customer. The unique option is set to true to ensure that no two documents have the same email address.
+- **password**: A required string property that represents the password of the customer.
 
-##### Indexes
 The customerSchema defines an index on the email property with the unique option set to true. This ensures that there are no two documents with the same email address.
 
 
@@ -155,9 +149,9 @@ const Customer = mongoose.model('Customer', customerSchema);
 
 Represents an admin with properties such as adminId, adminName, email, and any other relevant details.
 
-fullName: A required string field for the admin's full name.
-email: A required string field for the admin's email address, which is also set to be unique.
-password: A required string field for the admin's password.
+- **fullName**: A required string field for the admin's full name.
+- **email**: A required string field for the admin's email address, which is also set to be unique.
+- **password**: A required string field for the admin's password.
 
 ```js
 const adminSchema = new mongoose.Schema({
@@ -184,10 +178,10 @@ const Admin = mongoose.model('Admin', adminSchema);
 Represents a booking made by a customer with properties such as bookingId, customerId, bikeId, timeslotId, startTime, endTime, and any other relevant details.
 
 
-bike: A reference to a Bike document in the database. This field is required and represented as a mongoose.Schema.Types.ObjectId.
-timeslot: A reference to a Timeslot document in the database. This field is required and represented as a mongoose.Schema.Types.ObjectId.
-customer: A reference to a Customer document in the database. This field is required and represented as a mongoose.Schema.Types.ObjectId.
-bookingDate: A Date field that defaults to the current date and time.
+- **bike**: A reference to a Bike document in the database. This field is required and represented as a mongoose.Schema.Types.ObjectId.
+- **timeslot**: A reference to a Timeslot document in the database. This field is required and represented as a mongoose.Schema.Types.ObjectId.
+- **customer**: A reference to a Customer document in the database. This field is required and represented as a mongoose.Schema.Types.ObjectId.
+- **bookingDate**: A Date field that defaults to the current date and time.
 
 
 ```js
