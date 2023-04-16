@@ -2,24 +2,27 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
+import * as dotenv from 'dotenv';
 
 // Import data models
-import Bike from './models/bike';
-import Timeslot from './models/timeslot';
-import Customer from './models/customer';
-import Admin from './models/admin';
-import Booking from './models/booking';
+import Bike from './models/bike.model.js';
+import Timeslot from './models/timeslot.model.js';
+import Customer from './models/customer.model.js';
+import Admin from './models/admin.model.js';
+import Booking from './models/booking.model.js';
 
-// Create Express app
+// Create Express app and invoke env
 const app = express();
+dotenv.config();
 
 // Configure body-parser middleware for parsing request bodies
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Connect to MongoDB
+// TODO - move the url to .env
 mongoose
-  .connect('mongodb://localhost/bike-rental', {
+  .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -104,7 +107,6 @@ app.get('/api/customers/:customerId/bookings', async (req, res) => {
   }
 });
 
-
 // GET /api/admins/:adminId/bookings - Retrieve all bookings for an admin
 app.get('/api/admins/:adminId/bookings', async (req, res) => {
   try {
@@ -182,6 +184,6 @@ app.delete('/api/bookings/:bookingId', async (req, res) => {
 });
 
 // Start the Express app
-app.listen(3000, () => {
-  console.log('Server started on http://localhost:3000');
+app.listen(process.env.PORT, () => {
+  console.log(`Server started on http://localhost:${process.env.PORT}`);
 });
