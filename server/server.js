@@ -104,7 +104,7 @@ app.get('/api/customers/:customerId/bookings', async (req, res) => {
   }
 });
 
-// GET /api/admins/:adminId/bookings - Retrieve all bookings for an admin
+
 // GET /api/admins/:adminId/bookings - Retrieve all bookings for an admin
 app.get('/api/admins/:adminId/bookings', async (req, res) => {
   try {

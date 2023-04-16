@@ -1,3 +1,7 @@
+/**
+ * Ignore this file
+ */
+
 const mongoose = require('mongoose');
 
 // Define the Bike schema
