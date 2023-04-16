@@ -1,6 +1,28 @@
 # Bike Rental System Updated. 
 
-Documentation link - https://hackmd.io/AKLlIa7TQsa5ejzXQN7E0g
+<br/>
+<p align="center">
+  <h3 align="center">Bike Rental System - Backend</h3>
+
+  <p align="center">
+   Ride in Style with Our Bike Rental App
+    <br/>
+    <br/>
+    <a href="https://hackmd.io/AKLlIa7TQsa5ejzXQN7E0g"><strong>Explore the docs »</strong></a>
+    <br/>
+    <br/>
+  </p>
+</p>
+
+![Contributors](https://img.shields.io/github/contributors/koushith/CrediTail?color=dark-green) ![Forks](https://img.shields.io/github/forks/koushith/CrediTail?style=social) ![Issues](https://img.shields.io/github/issues/koushith/CrediTail) ![License](https://img.shields.io/github/license/koushith/CrediTail)
+
+## Table Of Contents
+
+
+- [Actors Involved](###Actors-involved)
+- [Schema Models](####Data-Models)
+- [API Endpoints](###API-Documentation)
+
 ---
 
 #### Database Schema and API endpoints
