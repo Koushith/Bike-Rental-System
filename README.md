@@ -1,9 +1,9 @@
 ## Bike Rental System Updated. 
 
+Full Documentation link - https://hackmd.io/@5cEar4SwQUa-4Sy6-1qYyQ/Sy1e78Yzn
 
 ---
 
-#### Database Schema and API endpoints
 
 ### Actors involved
 
